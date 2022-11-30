@@ -19,7 +19,6 @@ const rename = async () => {
   try {
     await fs.rename(oldName, newName);
   } catch (error) {
-    console.log(error);
     if ((error.code === "ENOENT") | (error.code === "EEXIST")) {
       throw new Error("FS operation failed");
     }
