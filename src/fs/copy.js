@@ -15,8 +15,8 @@ export const copy = async () => {
           await fs.writeFile(
             path.resolve(__dirname, `./files_copy/${dirent.name}`), data );
     });
-  } catch (err) {
-    if (err.code === "ENOENT" | err.code === "EEXIST") {
+  } catch (error) {
+    if (error.code === "ENOENT" | error.code === "EEXIST") {
       throw new Error("FS operation failed");
     }
   }
